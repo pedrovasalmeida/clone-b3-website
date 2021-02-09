@@ -1,37 +1,38 @@
 /** Packages */
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-/** Imagens */
-import Logo from '../../assets/logo.png';
+/** My Components */
+import { Container, WarningIcon, Button } from './styles';
 
-/** Componentes Personalizados */
-import { Container, Logomarca, Body } from './styles';
+const Home: React.FC = () => {
+  const history = useHistory();
 
-const NotFound: React.FC = () => {
+  const handleBackToHome = () => {
+    history.push('/');
+  };
+
   return (
     <Container>
-      <Logomarca src={Logo} alt="Logo" />
+      <h1>
+        <WarningIcon size={100} />
+        Página não encontrada
+      </h1>
+      <span>
+        A página que você solicitou não existe ou não pode ser encontrada.
+        Utilize o campo de busca para procurar um conteúdo semelhante ao
+        desejado.
+      </span>
 
-      <Body>
-        <span>POWERED BY</span>
-        <span className="title">
-          Input
-          <b>On</b>
-        </span>
-      </Body>
+      <span>
+        <strong>Desculpe-nos pelo transtorno!</strong>
+      </span>
 
-      <span className="notFound">PÁGINA NÃO ENCONTRADA</span>
-      <button
-        type="button"
-        className="back"
-        onClick={() => {
-          window.location.href = '/';
-        }}
-      >
-        VOLTAR PARA PÁGINA INICIAL
-      </button>
+      <Button type="button" onClick={handleBackToHome}>
+        <span>Acessar página inicial</span>
+      </Button>
     </Container>
   );
 };
 
-export default NotFound;
+export default Home;

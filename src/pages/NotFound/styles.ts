@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { IoMdWarning } from 'react-icons/io';
 
 export const Container = styled.div`
   display: flex;
@@ -7,74 +8,48 @@ export const Container = styled.div`
   justify-content: center;
 
   max-width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 74px);
 
   padding: 50px;
-  background-color: #74eaae;
 
-  .notFound {
-    font-size: 40px;
-    margin-top: 100px;
-    font-weight: 600;
-    color: #fff;
+  background-color: #eeeeee;
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 30px 0;
+    color: #7098ba;
   }
 
-  .back {
-    cursor: pointer;
-    color: #448363;
-    border: none;
-    margin-top: 20px;
+  span {
+    color: #7a7c82;
+    margin: 15px 0;
 
-    font-size: 14px;
-    font-weight: 600;
-
-    background-color: transparent;
+    strong {
+      font-weight: 600;
+    }
   }
 `;
 
-const float = keyframes`
-    0% {
-        transform: translatey(0px);
-    }
-    50% {
-        transform: translatey(-30px);
-    }
-    100% {
-        transform: translatey(0px);
-    }
+export const WarningIcon = styled(IoMdWarning)`
+  color: #6fa5c5;
 `;
 
-export const Logomarca = styled.img`
-  width: 200px;
-  height: auto;
+export const Button = styled.button`
+  background: #23b1dc;
+  padding: 15px 20px;
+  margin: 20px 0;
 
-  cursor: pointer;
-  transform: translatey(0px);
-
-  animation: 2s ${float} ease-in-out infinite;
-  transition: 0.5s all;
-`;
-
-export const Body = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 20px;
+  transition: background 500ms ease;
 
   span {
     color: #fff;
-    font-size: 12px;
+    text-transform: uppercase;
   }
 
-  .title {
-    font-size: 50px;
-    font-weight: 600;
-    color: #448363;
-
-    b {
-      color: #fff;
-    }
+  &:hover {
+    background: #005ca9;
   }
 `;
