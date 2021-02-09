@@ -2,7 +2,7 @@
 
 A project that aims to clone the interface of the brazilian stock exchange, B3.
 
-The official website: [**[B]³ - A Bolsa do Brasil**](http://www.b3.com.br/)
+The official website: [**A Bolsa do Brasil | B3**](http://www.b3.com.br/)
 
 ---
 
